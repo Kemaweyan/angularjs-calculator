@@ -30,6 +30,7 @@ body {
     font: bold 36px Roboto;
     color: #2d5559;
     line-height: 48px;
+    overflow: hidden;
 }
 table {
     width: 100%;

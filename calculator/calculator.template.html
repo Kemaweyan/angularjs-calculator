@@ -3,15 +3,15 @@
   <table cellspacing="0" cellpadding="0">
     <tr>
       <td><a href="#" class="button col1" ng-click="$ctrl.reset()">C</a></td>
-      <td><a href="#" class="button col2" ng-click="$ctrl.setOperation('divide')">&divide;</a></td>
-      <td><a href="#" class="button col3" ng-click="$ctrl.setOperation('multiple')">&times;</a></td>
-      <td><a href="#" class="button col4" ng-click="$ctrl.setOperation('minus')">-</a></td>
+      <td><a href="#" class="button col2" ng-click="$ctrl.operation('div')">&divide;</a></td>
+      <td><a href="#" class="button col3" ng-click="$ctrl.operation('mul')">&times;</a></td>
+      <td><a href="#" class="button col4" ng-click="$ctrl.operation('sub')">-</a></td>
     </tr>
     <tr>
       <td><a href="#" class="button col1" ng-click="$ctrl.number(7)">7</a></td>
       <td><a href="#" class="button col2" ng-click="$ctrl.number(8)">8</a></td>
       <td><a href="#" class="button col3" ng-click="$ctrl.number(9)">9</a></td>
-      <td rowspan="2"><a href="#" class="button two_row col4" ng-click="$ctrl.setOperation('plus')">+</a></td>
+      <td rowspan="2"><a href="#" class="button two_row col4" ng-click="$ctrl.operation('sum')">+</a></td>
     </tr>
     <tr>
       <td><a href="#" class="button col1" ng-click="$ctrl.number(4)">4</a></td>
@@ -22,7 +22,7 @@
       <td><a href="#" class="button col1" ng-click="$ctrl.number(1)">1</a></td>
       <td><a href="#" class="button col2" ng-click="$ctrl.number(2)">2</a></td>
       <td><a href="#" class="button col3" ng-click="$ctrl.number(3)">3</a></td>
-      <td rowspan="2"><a href="#" class="button two_row col4" ng-click="$ctrl.getResult()">=</a></td>
+      <td rowspan="2"><a href="#" class="button two_row col4" ng-click="$ctrl.operation(null)">=</a></td>
     </tr>
     <tr>
       <td colspan="2"><a href="#" class="button two_col" ng-click="$ctrl.number(0)">0</a></td>

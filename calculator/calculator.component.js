@@ -8,12 +8,12 @@ component("calculator", {
 
         self.number = function (num) {
             calcInput.addNumber(num);
-
             self.displayData = calcInput.getStrValue();
         };
 
         self.dot = function () {
             calcInput.addDot();
+            self.displayData = calcInput.getStrValue();
         };
 
         self.reset = function () {

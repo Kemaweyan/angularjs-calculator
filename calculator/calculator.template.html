@@ -1,5 +1,5 @@
 <div id="calc">
-  <p id="calc_display" ng-bind="$ctrl.displayData"></p>
+  <p id="calc_display" ng-bind="$ctrl.displayData | calcDisplay"></p>
   <table cellspacing="0" cellpadding="0">
     <tr>
       <td><a href="#" class="button col1" ng-click="$ctrl.reset()">C</a></td>

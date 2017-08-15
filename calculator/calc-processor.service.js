@@ -33,6 +33,6 @@ service('calcProcessor', function () {
         buffer = result;
         operation = op;
 
-        return result.toString();
+        return result;
     };
 });

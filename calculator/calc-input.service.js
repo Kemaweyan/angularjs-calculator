@@ -20,6 +20,8 @@ service('calcInput', function () {
     };
 
     self.addDot = function () {
+        if (needReset)
+            self.reset();
         dotClicked = true;
     };
 
@@ -42,6 +44,6 @@ service('calcInput', function () {
     };
 
     self.setValue = function (num) {
-        value = num;
+        value = num.toString();
     };
 });

@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/Kemaweyan/angularjs-calculator/issues"
   },
-  "homepage": "https://github.com/Kemaweyan/angularjs-calculator#readme"
+  "homepage": "https://github.com/Kemaweyan/angularjs-calculator#readme",
+  "devDependencies": {
+    "jasmine": "^2.7.0",
+    "karma": "^1.7.0",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-firefox-launcher": "^1.0.1"
+  }
 }

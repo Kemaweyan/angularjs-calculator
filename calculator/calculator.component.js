@@ -6,7 +6,7 @@ angular.
     templateUrl: "calculator/calculator.template.html",
     controller: function (calcInput, calcProcessor) {
         var self = this;
-        self.displayData = 0;
+        self.displayData = "0";
 
         self.number = function (num) {
             calcInput.addNumber(num);
@@ -19,7 +19,7 @@ angular.
         };
 
         self.reset = function () {
-            self.displayData = 0;
+            self.displayData = "0";
             calcInput.reset();
             calcProcessor.reset();
         };

@@ -1,0 +1,20 @@
+{
+  "name": "angularja-calculator",
+  "description": "",
+  "main": "app.module.js",
+  "authors": [
+    "Taras Gaidukov"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Kemaweyan/angularjs-calculator",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.5"
+  }
+}

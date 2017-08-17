@@ -1,3 +1,5 @@
+'use strict';
+
 angular.
   module("calculator").
   component("calculator", {
@@ -24,7 +26,7 @@ angular.
 
         self.operation = function (op) {
             var num = calcInput.getNumValue();
-            result = calcProcessor.calculate(op, num);
+            var result = calcProcessor.calculate(op, num);
             calcInput.setValue(result);
             self.displayData = result;
         };

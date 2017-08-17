@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './calculator',
 
 
     // frameworks to use
@@ -15,14 +15,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-        'bower_components/angular/angular.js',
-        'bower_components/angular-mocks/angular-mocks.js',
-        'calculator/calculator.module.js',
-        'calculator/calculator.component.js',
-        'calculator/calc-input.service.js',
-        'calculator/calc-processor.service.js',
-        'calculator/calc-display.filter.js',
-        'calculator/calculator.component.spec.js'
+        '../bower_components/angular/angular.js',
+        '../bower_components/angular-mocks/angular-mocks.js',
+        '**/*.module.js',
+        '*!(.module|.spec).js',
+        '**/*.spec.js'
     ],
 
 

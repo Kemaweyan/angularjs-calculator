@@ -16,8 +16,13 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
         'bower_components/angular/angular.js',
-        '*/*.module.js',
-        '*/*.spec.js'
+        'bower_components/angular-mocks/angular-mocks.js',
+        'calculator/calculator.module.js',
+        'calculator/calculator.component.js',
+        'calculator/calc-input.service.js',
+        'calculator/calc-processor.service.js',
+        'calculator/calc-display.filter.js',
+        'calculator/calculator.component.spec.js'
     ],
 
 

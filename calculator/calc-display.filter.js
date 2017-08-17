@@ -1,6 +1,6 @@
 angular.
-module('calculator').
-filter('calcDisplay', function () {
+  module('calculator').
+  filter('calcDisplay', function () {
     return function (num) {
 
         if (typeof num == "string")

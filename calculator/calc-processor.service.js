@@ -1,6 +1,6 @@
 angular.
-module('calculator').
-service('calcProcessor', function () {
+  module('calculator').
+  service('calcProcessor', function () {
     var self = this;
     var buffer = null;
     var operation = null;

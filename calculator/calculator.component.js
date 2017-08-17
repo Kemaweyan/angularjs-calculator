@@ -1,6 +1,6 @@
 angular.
-module("calculator").
-component("calculator", {
+  module("calculator").
+  component("calculator", {
     templateUrl: "calculator/calculator.template.html",
     controller: function (calcInput, calcProcessor) {
         var self = this;

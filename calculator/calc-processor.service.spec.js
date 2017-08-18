@@ -1,6 +1,6 @@
 'use strict';
 
-describe('calcInput', function () {
+describe('calcProcessor', function () {
 
     beforeEach(module('calculator'));
 

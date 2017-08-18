@@ -47,5 +47,6 @@ angular.
 
     self.setValue = function (num) {
         value = num.toString();
+        dotClicked = (Math.floor(num) != num);
     };
 });

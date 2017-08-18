@@ -25,8 +25,9 @@ angular.
         };
 
         self.operation = function (op) {
+            var old = calcInput.oldInput();
             var num = calcInput.getNumValue();
-            var result = calcProcessor.calculate(op, num);
+            var result = calcProcessor.calculate(op, num, old);
             calcInput.setValue(result);
             self.displayData = result;
         };

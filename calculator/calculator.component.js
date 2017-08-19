@@ -8,6 +8,11 @@ angular.
         var self = this;
         self.displayData = "0";
 
+        function setCurrentValue(value) {
+            calcInput.setValue(value);
+            self.displayData = value;
+        }
+
         self.number = function (num) {
             calcInput.addNumber(num);
             self.displayData = calcInput.getStrValue();
@@ -27,9 +32,14 @@ angular.
         self.operation = function (op) {
             var old = calcInput.oldInput();
             var num = calcInput.getNumValue();
-            var result = calcProcessor.calculate(op, num, old);
-            calcInput.setValue(result);
-            self.displayData = result;
+            var result = calcProcessor.setOperation(op, num, old);
+            setCurrentValue(result);
+        };
+
+        self.calculate = function () {
+            var num = calcInput.getNumValue();
+            var result = calcProcessor.calculate(num);
+            setCurrentValue(result);
         };
     }
 });

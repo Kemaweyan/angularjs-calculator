@@ -18,8 +18,10 @@ describe('calculator', function () {
             spyOn(calcInput, 'getNumValue').and.returnValue('the getNumValue result');
             spyOn(calcInput, 'reset');
             spyOn(calcInput, 'setValue');
+            spyOn(calcInput, 'oldInput').and.returnValue('the oldInput result');
             // set spies on methods of the calcProcessor service
             calcProcessor = _calcProcessor_;
+            spyOn(calcProcessor, 'setOperation').and.returnValue('the setOperation result');
             spyOn(calcProcessor, 'calculate').and.returnValue('the calculate result');
             spyOn(calcProcessor, 'reset');
         }));
@@ -49,10 +51,19 @@ describe('calculator', function () {
             expect(ctrl.displayData).toBe("0");
         });
 
-        it('should calculate a result and set it as a value for the `displayData` property and to `calcInput.setValue`', function () {
+        it('should set an operation and set a result as a value for the `displayData` property and to `calcInput.setValue`', function () {
             ctrl.operation('the operation');
+            expect(calcInput.oldInput).toHaveBeenCalled();
             expect(calcInput.getNumValue).toHaveBeenCalled();
-            expect(calcProcessor.calculate).toHaveBeenCalledWith('the operation', 'the getNumValue result');
+            expect(calcProcessor.setOperation).toHaveBeenCalledWith('the operation', 'the getNumValue result', 'the oldInput result');
+            expect(calcInput.setValue).toHaveBeenCalledWith('the setOperation result');
+            expect(ctrl.displayData).toBe('the setOperation result');
+        });
+
+        it('should calculate a result and set it as a value for the `displayData` property and to `calcInput.setValue`', function () {
+            ctrl.calculate();
+            expect(calcInput.getNumValue).toHaveBeenCalled();
+            expect(calcProcessor.calculate).toHaveBeenCalledWith('the getNumValue result');
             expect(calcInput.setValue).toHaveBeenCalledWith('the calculate result');
             expect(ctrl.displayData).toBe('the calculate result');
         });

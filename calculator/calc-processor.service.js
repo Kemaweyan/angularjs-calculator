@@ -12,30 +12,35 @@ angular.
         operation = null;
     };
 
-    self.calculate = function (op, num, old) {
+    self.setOperation = function (op, num, old) {
+        try {
+            return old ? num : self.calculate(num);
+        } finally {
+            operation = op;
+        }
+    };
+
+    self.calculate = function (num) {
         var result = num;
 
-        if (!old || !op) {
-            if (buffer !== null) {
-                switch (operation) {
-                    case 'sum':
-                        result = buffer + num;
-                        break;
-                    case 'sub':
-                        result = buffer - num;
-                        break;
-                    case 'mul':
-                        result = buffer * num;
-                        break;
-                    case 'div':
-                        result = buffer / num;
-                        break;
-                }
+        if (buffer !== null) {
+            switch (operation) {
+                case 'sum':
+                    result = buffer + num;
+                    break;
+                case 'sub':
+                    result = buffer - num;
+                    break;
+                case 'mul':
+                    result = buffer * num;
+                    break;
+                case 'div':
+                    result = buffer / num;
+                    break;
             }
-            buffer = result;
         }
 
-        operation = op;
+        buffer = result;
 
         return result;
     };

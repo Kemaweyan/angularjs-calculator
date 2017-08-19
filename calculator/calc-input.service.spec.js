@@ -136,4 +136,25 @@ describe('calcInput', function () {
         expect(calcInput.getStrValue()).toBe("1234.5678");
         expect(calcInput.getNumValue()).toBe(1234.5678);
     });
+
+    it('initially the `oldInput` should return false', function () {
+        expect(calcInput.oldInput()).toBe(false);
+    });
+
+    it('the `oldInput` should return false after adding a number', function () {
+        calcInput.addNumber(1);
+        expect(calcInput.oldInput()).toBe(false);
+    });
+
+    it('the `oldInput` should return false after adding a number and reset', function () {
+        calcInput.addNumber(1);
+        calcInput.reset();
+        expect(calcInput.oldInput()).toBe(false);
+    });
+
+    it('the `oldInput` should return true after adding a number and getting a num value', function () {
+        calcInput.addNumber(1);
+        calcInput.getNumValue();
+        expect(calcInput.oldInput()).toBe(true);
+    });
 });

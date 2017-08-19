@@ -4,7 +4,7 @@ angular.
   module('calculator').
   service('calcInput', function () {
     var self = this;
-    var needReset = true;
+    var needReset = false;
     var dotClicked = false;
     var value = "0";
 

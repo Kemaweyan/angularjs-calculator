@@ -73,4 +73,56 @@ describe('calcProcessor', function () {
         var result = calcProcessor.calculate(5.6);
         expect(result).toBeCloseTo(9);
     });
+
+    it('should return a sum of two numbers and ignore previous operation', function () {
+        calcProcessor.setOperation('div', 1.2, false);
+        calcProcessor.setOperation('sum', 1.2, true);
+        var result = calcProcessor.calculate(3.4);
+        expect(result).toBeCloseTo(4.6);
+    });
+
+    it('should return a sub of two numbers and ignore previous operation', function () {
+        calcProcessor.setOperation('div', 1.2, false);
+        calcProcessor.setOperation('sub', 1.2, true);
+        var result = calcProcessor.calculate(3.4);
+        expect(result).toBeCloseTo(-2.2);
+    });
+
+    it('should return a mul of two numbers and ignore previous operation', function () {
+        calcProcessor.setOperation('div', 1.2, false);
+        calcProcessor.setOperation('mul', 1.2, true);
+        var result = calcProcessor.calculate(3.4);
+        expect(result).toBeCloseTo(4.08);
+    });
+
+    it('should return a div of two numbers and ignore previous operation', function () {
+        calcProcessor.setOperation('sum', 1.2, false);
+        calcProcessor.setOperation('div', 1.2, true);
+        var result = calcProcessor.calculate(3.4);
+        expect(result).toBeCloseTo(0.352941176);
+    });
+
+    it('should return a sum of two same numbers', function () {
+        calcProcessor.setOperation('sum', 1.2, false);
+        var result = calcProcessor.calculate(1.2);
+        expect(result).toBeCloseTo(2.4);
+    });
+
+    it('should return a sub of two same numbers, i.e. 0', function () {
+        calcProcessor.setOperation('sub', 1.2, false);
+        var result = calcProcessor.calculate(1.2);
+        expect(result).toBeCloseTo(0);
+    });
+
+    it('should return a mul of two same numbers', function () {
+        calcProcessor.setOperation('mul', 1.2, false);
+        var result = calcProcessor.calculate(1.2);
+        expect(result).toBeCloseTo(1.44);
+    });
+
+    it('should return a div of two same numbers, i.e. 1', function () {
+        calcProcessor.setOperation('div', 1.2, false);
+        var result = calcProcessor.calculate(1.2);
+        expect(result).toBeCloseTo(1);
+    });
 });

@@ -59,6 +59,19 @@ describe("An AngularJS Calculator Application", function () {
             expect(display.getText()).toEqual("12.34");
         });
 
+        it('should display inputted number beginning from 0.', function () {
+            dot.click();
+            expect(display.getText()).toEqual("0");
+            num1.click();
+            expect(display.getText()).toEqual("0.1");
+            num2.click();
+            expect(display.getText()).toEqual("0.12");
+            num3.click();
+            expect(display.getText()).toEqual("0.123");
+            num4.click();
+            expect(display.getText()).toEqual("0.1234");
+        });
+
         it('should calculate a sum of two numbers', function () {
             num1.click();
             num2.click();

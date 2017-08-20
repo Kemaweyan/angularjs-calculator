@@ -14,13 +14,13 @@ angular.
 
     self.setOperation = function (op, num, old) {
         try {
-            return old ? num : self.calculate(num);
+            return old ? num : self.calculate(num, false);
         } finally {
             operation = op;
         }
     };
 
-    self.calculate = function (num) {
+    self.calculate = function (num, old) {
         var result = num;
 
         if (buffer !== null) {
@@ -29,13 +29,13 @@ angular.
                     result = buffer + num;
                     break;
                 case 'sub':
-                    result = buffer - num;
+                    result = (old ? 0 : buffer) - num;
                     break;
                 case 'mul':
                     result = buffer * num;
                     break;
                 case 'div':
-                    result = buffer / num;
+                    result = (old ? 1 : buffer) / num;
                     break;
             }
         }

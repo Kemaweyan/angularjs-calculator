@@ -12,25 +12,25 @@ describe('calcProcessor', function () {
 
     it('should return a sum of two numbers', function () {
         calcProcessor.setOperation('sum', 1.2, false);
-        var result = calcProcessor.calculate(3.4);
+        var result = calcProcessor.calculate(3.4, false);
         expect(result).toBeCloseTo(4.6);
     });
 
     it('should return a sub of two numbers', function () {
         calcProcessor.setOperation('sub', 1.2, false);
-        var result = calcProcessor.calculate(3.4);
+        var result = calcProcessor.calculate(3.4, false);
         expect(result).toBeCloseTo(-2.2);
     });
 
     it('should return a mul of two numbers', function () {
         calcProcessor.setOperation('mul', 1.2, false);
-        var result = calcProcessor.calculate(3.4);
+        var result = calcProcessor.calculate(3.4, false);
         expect(result).toBeCloseTo(4.08);
     });
 
     it('should return a div of two numbers', function () {
         calcProcessor.setOperation('div', 1.2, false);
-        var result = calcProcessor.calculate(3.4);
+        var result = calcProcessor.calculate(3.4, false);
         expect(result).toBeCloseTo(0.352941176);
     });
 
@@ -38,7 +38,7 @@ describe('calcProcessor', function () {
         calcProcessor.setOperation('sum', 1.2, false);
         var result = calcProcessor.setOperation('sum', 3.4, false);
         expect(result).toBeCloseTo(4.6);
-        result = calcProcessor.calculate(5.6);
+        result = calcProcessor.calculate(5.6, false);
         expect(result).toBeCloseTo(10.2);
     });
 
@@ -46,7 +46,7 @@ describe('calcProcessor', function () {
         calcProcessor.setOperation('sum', 1.2, false);
         var result = calcProcessor.setOperation('sub', 3.4, false);
         expect(result).toBeCloseTo(4.6);
-        result = calcProcessor.calculate(5.6);
+        result = calcProcessor.calculate(5.6, false);
         expect(result).toBeCloseTo(-1);
     });
 
@@ -54,7 +54,7 @@ describe('calcProcessor', function () {
         calcProcessor.setOperation('sum', 1.2, false);
         var result = calcProcessor.setOperation('mul', 3.4, false);
         expect(result).toBeCloseTo(4.6);
-        result = calcProcessor.calculate(5.6);
+        result = calcProcessor.calculate(5.6, false);
         expect(result).toBeCloseTo(25.76);
     });
 
@@ -62,7 +62,7 @@ describe('calcProcessor', function () {
         calcProcessor.setOperation('sum', 1.2, false);
         var result = calcProcessor.setOperation('div', 3.4, false);
         expect(result).toBeCloseTo(4.6);
-        result = calcProcessor.calculate(5.6);
+        result = calcProcessor.calculate(5.6, false);
         expect(result).toBeCloseTo(0.821428571);
     });
 
@@ -70,59 +70,59 @@ describe('calcProcessor', function () {
         calcProcessor.setOperation('div', 1.2, false);
         calcProcessor.reset();
         calcProcessor.setOperation('sum', 3.4, false);
-        var result = calcProcessor.calculate(5.6);
+        var result = calcProcessor.calculate(5.6, false);
         expect(result).toBeCloseTo(9);
     });
 
     it('should return a sum of two numbers and ignore previous operation', function () {
         calcProcessor.setOperation('div', 1.2, false);
         calcProcessor.setOperation('sum', 1.2, true);
-        var result = calcProcessor.calculate(3.4);
+        var result = calcProcessor.calculate(3.4, false);
         expect(result).toBeCloseTo(4.6);
     });
 
     it('should return a sub of two numbers and ignore previous operation', function () {
         calcProcessor.setOperation('div', 1.2, false);
         calcProcessor.setOperation('sub', 1.2, true);
-        var result = calcProcessor.calculate(3.4);
+        var result = calcProcessor.calculate(3.4, false);
         expect(result).toBeCloseTo(-2.2);
     });
 
     it('should return a mul of two numbers and ignore previous operation', function () {
         calcProcessor.setOperation('div', 1.2, false);
         calcProcessor.setOperation('mul', 1.2, true);
-        var result = calcProcessor.calculate(3.4);
+        var result = calcProcessor.calculate(3.4, false);
         expect(result).toBeCloseTo(4.08);
     });
 
     it('should return a div of two numbers and ignore previous operation', function () {
         calcProcessor.setOperation('sum', 1.2, false);
         calcProcessor.setOperation('div', 1.2, true);
-        var result = calcProcessor.calculate(3.4);
+        var result = calcProcessor.calculate(3.4, false);
         expect(result).toBeCloseTo(0.352941176);
     });
 
     it('should return a sum of two same numbers', function () {
         calcProcessor.setOperation('sum', 1.2, false);
-        var result = calcProcessor.calculate(1.2);
+        var result = calcProcessor.calculate(1.2, true);
         expect(result).toBeCloseTo(2.4);
     });
 
-    it('should return a sub of two same numbers, i.e. 0', function () {
+    it('should return a negative value of the number', function () {
         calcProcessor.setOperation('sub', 1.2, false);
-        var result = calcProcessor.calculate(1.2);
-        expect(result).toBeCloseTo(0);
+        var result = calcProcessor.calculate(1.2, true);
+        expect(result).toBeCloseTo(-1.2);
     });
 
     it('should return a mul of two same numbers', function () {
         calcProcessor.setOperation('mul', 1.2, false);
-        var result = calcProcessor.calculate(1.2);
+        var result = calcProcessor.calculate(1.2, true);
         expect(result).toBeCloseTo(1.44);
     });
 
-    it('should return a div of two same numbers, i.e. 1', function () {
+    it('should return a multiplicative inverse of the number', function () {
         calcProcessor.setOperation('div', 1.2, false);
-        var result = calcProcessor.calculate(1.2);
-        expect(result).toBeCloseTo(1);
+        var result = calcProcessor.calculate(1.2, true);
+        expect(result).toBeCloseTo(0.833333333);
     });
 });

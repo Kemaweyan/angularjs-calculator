@@ -37,8 +37,9 @@ angular.
         };
 
         self.calculate = function () {
+            var old = calcInput.oldInput();
             var num = calcInput.getNumValue();
-            var result = calcProcessor.calculate(num);
+            var result = calcProcessor.calculate(num, old);
             setCurrentValue(result);
         };
     }

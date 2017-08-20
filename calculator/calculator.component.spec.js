@@ -62,8 +62,9 @@ describe('calculator', function () {
 
         it('should calculate a result and set it as a value for the `displayData` property and to `calcInput.setValue`', function () {
             ctrl.calculate();
+            expect(calcInput.oldInput).toHaveBeenCalled();
             expect(calcInput.getNumValue).toHaveBeenCalled();
-            expect(calcProcessor.calculate).toHaveBeenCalledWith('the getNumValue result');
+            expect(calcProcessor.calculate).toHaveBeenCalledWith('the getNumValue result', 'the oldInput result');
             expect(calcInput.setValue).toHaveBeenCalledWith('the calculate result');
             expect(ctrl.displayData).toBe('the calculate result');
         });

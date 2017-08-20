@@ -151,7 +151,7 @@ describe("An AngularJS Calculator Application", function () {
             expect(display.getText()).toEqual("4396.64");
         });
 
-        it('should calculate a sub of two same numbers, i.e. 0', function () {
+        it('should calculate a negative value of the number', function () {
             num5.click();
             num6.click();
             num3.click();
@@ -163,7 +163,7 @@ describe("An AngularJS Calculator Application", function () {
             minus.click();
             expect(display.getText()).toEqual("5634.19");
             equals.click();
-            expect(display.getText()).toEqual("0");
+            expect(display.getText()).toEqual("-5634.19");
         });
 
         it('should calculate a mul of two same numbers', function () {
@@ -181,7 +181,7 @@ describe("An AngularJS Calculator Application", function () {
             expect(display.getText()).toEqual("5646183.8689");
         });
 
-        it('should calculate a div of two same numbers, i.e. 1', function () {
+        it('should calculate a multiplicative inverse of the number', function () {
             num3.click();
             num2.click();
             num9.click();
@@ -193,7 +193,7 @@ describe("An AngularJS Calculator Application", function () {
             divide.click();
             expect(display.getText()).toEqual("3299.65");
             equals.click();
-            expect(display.getText()).toEqual("1");
+            expect(display.getText()).toEqual("0.0003030624");
         });
 
         it('should calculate a sum of three numbers', function () {

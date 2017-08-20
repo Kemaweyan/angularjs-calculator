@@ -41,6 +41,7 @@ angular.
         }
 
         buffer = result;
+        operation = null;
 
         return result;
     };

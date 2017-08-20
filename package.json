@@ -4,7 +4,9 @@
   "description": "",
   "main": "app.module.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "http-server . -a localhost -p 8000 -c-1",
+    "test": "karma start karma.conf.js",
+    "protractor": "protractor e2e-tests/protractor.conf.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +24,6 @@
     "karma": "^1.7.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-firefox-launcher": "^1.0.1",
-    "karma-jasmine": "^1.1.0",
-    "protractor": "^5.1.2"
+    "karma-jasmine": "^1.1.0"
   }
 }

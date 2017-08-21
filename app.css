@@ -54,6 +54,7 @@ td {
     background-color: #9dbcbf;
     text-align: center;
     border-radius: 5px;
+    cursor: pointer;
 }
 .button:hover {
     background-color: #aacbcf;

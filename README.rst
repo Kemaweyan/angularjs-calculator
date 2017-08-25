@@ -10,17 +10,17 @@ Usage
 Open the ``index.html`` page in your browser. Input the first number using number buttons, click the
 operation button, input the second number and click ``=`` to get a result:
 
-``1`` ``+` ``2`` ``=`` would be 3
+``1`` ``+`` ``2`` ``=`` would be 3
 
-``5`` ``-` ``3`` ``=`` would be 2
+``5`` ``-`` ``3`` ``=`` would be 2
 
-``4`` ``×` ``3`` ``=`` would be 12
+``4`` ``×`` ``3`` ``=`` would be 12
 
-``5`` ``÷` ``4`` ``=`` would be 1.25
+``5`` ``÷`` ``4`` ``=`` would be 1.25
 
 Also you can click another operation button and input the next number to calculate complex expressions:
 
-``1`` ``+` ``2`` ``-`` ``6`` ``×`` ``8`` ``÷`` ``2`` ``=`` would be -12
+``1`` ``+`` ``2`` ``-`` ``6`` ``×`` ``8`` ``÷`` ``2`` ``=`` would be -12
 
 Additional features
 ===================
